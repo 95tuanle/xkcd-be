@@ -2,6 +2,8 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+const cors = require('cors');
+
 const {connect, connection} = require("mongoose");
 const xkcdRouter = require("./routers/xkcd-router");
 const initializeMongoDatabaseConnection = async () => {
@@ -13,6 +15,8 @@ const initializeMongoDatabaseConnection = async () => {
   }
 };
 initializeMongoDatabaseConnection().then(() => console.log("MongoDB connection established"));
+
+app.use(cors())
 
 app.get('/', (req, res) => {
   res.json('XKCD API is up and running!')
