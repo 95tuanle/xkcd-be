@@ -1,1 +1,14 @@
+### Test
+GET https://xkcd.com/info.0.json
+
+### Main
 GET {{url}}
+
+### Get latest comic
+GET {{url}}/xkcs/latest
+
+### Get random comic
+GET {{url}}/xkcs/random
+
+### Get comic by number
+GET {{url}}/xkcs/num/33
