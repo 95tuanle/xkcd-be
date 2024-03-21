@@ -1,3 +1,4 @@
+'use strict';
 const {getLatestComic, getRandomComic, getComicByNumber, increaseViewCount} = require("../services/xkcd-service");
 const z = require('zod');
 
