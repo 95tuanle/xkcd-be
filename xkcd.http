@@ -11,4 +11,4 @@ GET {{url}}/xkcs/latest
 GET {{url}}/xkcs/random
 
 ### Get comic by number
-GET {{url}}/xkcs/num/33
+GET {{url}}/xkcs/num/100

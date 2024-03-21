@@ -1,3 +1,4 @@
+const XKCD = require('../models/xkcd-model');
 const domain = 'https://xkcd.com';
 const jsonPath = '/info.0.json';
 
@@ -22,4 +23,16 @@ exports.getComicByNumber = async (id) => {
 exports.getRandomComic = async () => {
   const {num} = await this.getLatestComic();
   return await this.getComicByNumber(Math.floor(Math.random() * num) + 1);
+}
+
+
+exports.increaseViewCount = async (num) => {
+  try {
+    const {viewCount} = await XKCD.findOneAndUpdate({num: num}, {$inc: {viewCount: 1}}, {
+      new: true, upsert: true, setDefaultsOnInsert: true
+    }).exec();
+    return viewCount;
+  } catch (error) {
+    throw new Error('Failed to increase view count');
+  }
 }

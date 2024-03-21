@@ -1,10 +1,10 @@
-const {getLatestComic, getRandomComic, getComicByNumber} = require("../services/xkcd-service");
+const {getLatestComic, getRandomComic, getComicByNumber, increaseViewCount} = require("../services/xkcd-service");
 const z = require('zod');
 
 exports.handleGetLatestComic = async (req, res) => {
   try {
     const comic = await getLatestComic();
-    // comic.view_count = (comic.view_count || 0) + 1;
+    comic.view_count = await increaseViewCount(comic.num)
     return res.json(comic);
   } catch (error) {
     console.error('Error fetching JSON:', error);
@@ -15,7 +15,7 @@ exports.handleGetLatestComic = async (req, res) => {
 exports.handleGetRandomComic = async (req, res) => {
   try {
     const comic = await getRandomComic();
-    // comic.view_count = (comic.view_count || 0) + 1;
+    comic.view_count = await increaseViewCount(comic.num)
     return res.json(comic);
   } catch (error) {
     console.error('Error fetching JSON:', error);
@@ -44,7 +44,7 @@ exports.handleGetComicByNumber = [async (req, res, next) => {
   try {
     const {id} = req.params;
     const comic = await getComicByNumber(id);
-    // comic.view_count = (comic.view_count || 0) + 1;
+    comic.view_count = await increaseViewCount(comic.num)
     return res.json(comic);
   } catch (error) {
     console.error('Error fetching JSON:', error);
