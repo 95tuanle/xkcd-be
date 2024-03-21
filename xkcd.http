@@ -5,10 +5,10 @@ GET https://xkcd.com/info.0.json
 GET {{url}}
 
 ### Get latest comic
-GET {{url}}/xkcs/latest
+GET {{url}}/xkcd/latest
 
 ### Get random comic
-GET {{url}}/xkcs/random
+GET {{url}}/xkcd/random
 
 ### Get comic by number
-GET {{url}}/xkcs/num/100
+GET {{url}}/xkcd/num/100

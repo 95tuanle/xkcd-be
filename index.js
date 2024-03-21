@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
   res.json('XKCD API is up and running!')
 });
 
-app.use('/xkcs', xkcdRouter);
+app.use('/xkcd', xkcdRouter);
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
