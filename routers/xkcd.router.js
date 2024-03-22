@@ -1,6 +1,6 @@
 'use strict';
 const {Router} = require('express');
-const {handleGetLatestComic, handleGetRandomComic, handleGetComicByNumber} = require("../controllers/xkcd-controller");
+const {handleGetLatestComic, handleGetRandomComic, handleGetComicByNumber} = require("../controllers/xkcd.controller");
 const router = Router();
 
 router.get('/random', handleGetRandomComic);
