@@ -1,5 +1,5 @@
 'use strict';
-const {getLatestComic, getRandomComic, getComicByNumber, increaseViewCount} = require("../services/xkcd-service");
+const {getLatestComic, getRandomComic, getComicByNumber, increaseViewCount} = require("../services/xkcd.service");
 const z = require('zod');
 
 exports.handleGetLatestComic = async (req, res) => {

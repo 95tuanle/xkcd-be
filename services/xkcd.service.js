@@ -1,5 +1,5 @@
 'use strict';
-const XKCD = require('../models/xkcd-model');
+const XKCD = require('../models/xkcd.model');
 const domain = 'https://xkcd.com';
 const jsonPath = '/info.0.json';
 

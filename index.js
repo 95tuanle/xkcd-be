@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 const {connect, connection} = require("mongoose");
-const xkcdRouter = require("./routers/xkcd-router");
+const xkcdRouter = require("./routers/xkcd.router");
 const initializeMongoDatabaseConnection = async () => {
   try {
     await connect(`mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_HOST}/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`);
